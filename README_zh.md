@@ -79,6 +79,8 @@ platform = https://github.com/pioarduino/platform-espressif32/releases/download/
 |---|---|---|---|
 | 3.3V | IO9 | IO8 | GND |
 
+*注意：IO8和IO9用于I2C总线应用，在电路板上通过R32与R33上拉，使用中需要注意。*
+
 ### 扩展 IO，`NM-CYD-C5: P1`
 
 | 1 | 2 | 3 | 4 |
@@ -118,7 +120,7 @@ platform = https://github.com/pioarduino/platform-espressif32/releases/download/
 
 ### 外置天线参数
 
-- 天线频率范围：2400~2500MHz / 5000~5800MHz
+- 天线频率范围：2400\~2500MHz / 5000\~5800MHz
 - 驻波比（VSWR）：2400-2500 ≤ 2.5，5000-5800 ≤ 2.5
 - 效率（Efficiency）：2400-2500: 83.3 AVG；5000-5800: 73.8 AVG
 - 峰值增益 Peak Gain（dBi）：2400-2500: 3.2 AVG；5000-5800: 3.7 AVG
@@ -167,6 +169,14 @@ platform = https://github.com/pioarduino/platform-espressif32/releases/download/
 
     适用于 M5Stack、Lilygo、CYD、Marauder 和 ESP32 设备的应用程序启动器。
 
+- [GhostESP](https://github.com/GhostESP-Revival/GhostESP)
+
+    GhostESP 是一款基于 ESP32 的无线安全工具，集成了多种 Wi-Fi 攻击和分析功能。
+
+- [Espectre](https://github.com/francescopace/espectre)
+
+    Espectre 是一个开源平台，整合了可直接烧录的固件、可嵌入式 C++ SDK、MicroPython 实现、浏览器工具、主机端 CLI、开放数据集、开放模型权重，以及用于构建和验证检测器的研究工作流。基于WiFi CSI实现基于无线电的人体探测，可通过ESPHome 或 MQTT连接Home Assistant。
+
 - [ESP-Claw](https://github.com/espressif/esp-claw)
 
     ESP-Claw 是 Espressif 面向物联网设备的聊天式编程 AI 代理框架。它通过对话定义设备行为，并在 Espressif 芯片本地完成感知、决策和执行的完整闭环。受 OpenClaw 概念启发，使用 C 语言重新实现，ESP-Claw 轻量、智能且持续进化。
@@ -183,11 +193,26 @@ platform = https://github.com/pioarduino/platform-espressif32/releases/download/
 
 ## 进行中的项目
 
-- [HaleHound-CYD](https://github.com/JesseCHale/HaleHound-CYD)
+- [HaleHound-CYD](https://github.com/RockBase-iot/HaleHound-CYD)
+
+    原始的 [HaleHound-CYD 项目](https://github.com/JesseCHale/HaleHound-CYD)已闭源，因此本仓库尝试继续为 NM-CYD-C5 进行开发和适配。
+
 - [ESP32-KillerBee](https://github.com/RockBase-iot/ESP32-KillerBee)
 - [ESP32DualBandWardriver](https://github.com/justcallmekoko/ESP32DualBandWardriver)
+- [PorkchopS3-C5](https://github.com/Xombi3/PorkchopS3-C5)
+- [The Poom](https://github.com/RockBase-iot/the_poom)
+
+    The Poom 改编自 the_pom 多功能工具固件，适配于 NM-CYD-C5。
 
 # 更新日志
+
+## 2026-9-14
+
+- 新增支持项目：
+  - [GhostESP](https://github.com/GhostESP-Revival/GhostESP)
+  - [Espectre](https://github.com/francescopace/espectre)
+- 针对[issue #6](https://github.com/RockBase-iot/NM-CYD-C5/issues/6) 补充了关于 IO8 和 IO9 的上拉电阻问题说明。感谢[SantaClaus1206](https://github.com/santaclaus1206)的反馈。
+- 针对[issue #3](https://github.com/RockBase-iot/NM-CYD-C5/issues/3) 补充了在Arduino使用中，增加`#define TFT_INVERSION_OFF`的说明。感谢[ludodefgh](https://github.com/ludodefgh)的反馈。
 
 ## 2026-08-31
 

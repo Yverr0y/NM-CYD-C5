@@ -27,6 +27,11 @@ Arduino IDE Libray Manger, Install the libraries below:
 ```c
 #define ST7789_DRIVER
 
+#define TFT_INVERSION_OFF
+
+// If display colors are swapped (e.g. red and blue), define color order:
+// #define TFT_RGB_ORDER TFT_BGR
+
 #define TFT_BL   25            // LED back-light control pin
 #define TFT_BACKLIGHT_ON HIGH  // Level to turn ON back-light (HIGH or LOW)
 

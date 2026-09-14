@@ -79,6 +79,8 @@ These files can be found in `Demos\Arduino\libraries\TFT_eSPI`.
 |---|---|---|---|
 | 3.3V | IO9 | IO8 | GND |
 
+*Note: IO8 and IO9 are used for the I2C bus and are pulled up on the board via R32 and R33 — please keep this in mind when using them.*
+
 ### Extend IO, `NM-CYD-C5: P1`
 
 | 1 | 2 | 3 | 4 |
@@ -118,7 +120,7 @@ In response to widespread user demand, the latest batch of NM-CYD-C5-Colorful in
 
 ### External Antenna Parameters
 
-- Frequency range: 2400~2500MHz / 5000~5800MHz
+- Frequency range: 2400\~2500MHz / 5000\~5800MHz
 - VSWR: 2400-2500 ≤ 2.5, 5000-5800 ≤ 2.5
 - Efficiency %: 2400-2500: 83.3 AVG; 5000-5800: 73.8 AVG
 - Peak Gain (dBi): 2400-2500: 3.2 AVG; 5000-5800: 3.7 AVG
@@ -167,6 +169,14 @@ In response to widespread user demand, the latest batch of NM-CYD-C5-Colorful in
 
     Application launcher for M5Stack, Lilygo, CYDs, Marauder and ESP32 devices.
 
+- [GhostESP](https://github.com/GhostESP-Revival/GhostESP)
+
+    GhostESP is an ESP32-based wireless security tool that integrates a variety of Wi-Fi attack and analysis features.
+
+- [Espectre](https://github.com/francescopace/espectre)
+
+    Espectre is an open-source platform combining ready-to-flash firmware, an embeddable C++ SDK, a MicroPython implementation, browser tools, a host-side CLI, open datasets, open model weights, and research workflows for building and validating detectors. It performs radio-based human presence detection using WiFi CSI and can connect to Home Assistant via ESPHome or MQTT.
+
 - [ESP-Claw](https://github.com/espressif/esp-claw)
 
     ESP-Claw is Espressif's chat-coding AI agent framework for IoT devices. It defines device behavior through conversation and completes the full loop of sensing, decision-making, and execution locally on Espressif chips. Inspired by the OpenClaw concept and reimplemented in C, ESP-Claw is lightweight, intelligent, and continuously evolving.
@@ -183,11 +193,26 @@ For firmware you would like to offer as a download on our Web Flasher, please ch
 
 ## Ongoing Projects
 
-- [HaleHound-CYD](https://github.com/JesseCHale/HaleHound-CYD)
+- [HaleHound-CYD](https://github.com/RockBase-iot/HaleHound-CYD)
+
+    The [Original HaleHound-CYD Project](https://github.com/JesseCHale/HaleHound-CYD) closed the source codes, so this repository trying to continue the development and adaptation for the NM-CYD-C5.
+
 - [ESP32-KillerBee](https://github.com/RockBase-iot/ESP32-KillerBee)
 - [ESP32DualBandWardriver](https://github.com/justcallmekoko/ESP32DualBandWardriver)
+- [PorkchopS3-C5](https://github.com/Xombi3/PorkchopS3-C5)
+- [The Poom](https://github.com/RockBase-iot/the_poom)
+
+    The Poom is adapted from the the_pom multitool firmware for the NM-CYD-C5.
 
 # Release Log
+
+## 2026-9-14
+
+- Added new supported projects:
+  - [GhostESP](https://github.com/GhostESP-Revival/GhostESP)
+  - [Espectre](https://github.com/francescopace/espectre)
+- Added a note about the IO8 and IO9 pull-up resistors, in response to [issue #6](https://github.com/RockBase-iot/NM-CYD-C5/issues/6). Thanks to [SantaClaus1206](https://github.com/santaclaus1206) for the feedback.
+- Added a note about using `#define TFT_INVERSION_OFF` in Arduino, in response to [issue #3](https://github.com/RockBase-iot/NM-CYD-C5/issues/3). Thanks to [ludodefgh](https://github.com/ludodefgh) for the feedback.
 
 ## 2026-08-31
 
